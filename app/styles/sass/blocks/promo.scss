@@ -1,0 +1,289 @@
+.promo {
+    &__row {
+        --bs-gutter-y: 0;
+    }
+    &-info {
+        text-align: center;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        position: relative;
+        background: linear-gradient(to right, rgba($color: #fff, $alpha: 1) 50%, rgba($color: #fff, $alpha: 0.5));
+
+        &__title {
+            text-transform: uppercase;
+        }
+        &__logo {
+            max-width: 200px;
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+        
+    }
+    &-advantages {
+        margin-bottom: 1.5rem;
+    }
+    @media screen and (max-width: 991px) {
+        &-advantages {
+           display: none;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        &-info {
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: url(../images/dist/room.jpg);
+                background-size: auto 100%;
+                background-repeat: no-repeat;
+                background-position: right center;
+                z-index: -1;
+                opacity: 0.6;
+            }
+        }
+        position: relative;
+        &:before {
+            content: "";
+            display: block;
+            height: 20%;
+            width: 100%;
+            background: linear-gradient(to bottom, rgba($color: #fff, $alpha: 0) 0%, rgba($color: #fff, $alpha: 1));
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        &__row {
+            flex-direction: column-reverse;
+        }
+    }
+
+}
+
+.clean-process {
+
+    @media screen and (min-width: 320px) {
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        &:before, &:after {
+            content: "";
+            display: block;
+            height: 20%;
+            width: 100%;
+            position: absolute;
+            right: 0;
+            pointer-events: none;
+        }
+        &:after {
+            background: linear-gradient(to bottom, rgba($color: #fff, $alpha: 0) 0%, rgba($color: #fff, $alpha: 1));
+            bottom: 0;
+        }
+        &:before {
+            background: linear-gradient(to top, rgba($color: #fff, $alpha: 0) 0%, rgba($color: #fff, $alpha: 1));
+            top: 0;
+        }
+        &__cleaner {
+            position: absolute;
+            right: 30%;
+            top: 50%;
+            transform: translate(0, -50%);
+            height: 40%;
+            pointer-events: none;
+            z-index: 3;
+            opacity: 0.9;
+            filter: drop-shadow(30px 30px 30px rgba($color: #000, $alpha: 1));
+            .animate & {
+                animation-name: moveCleaner;
+                animation-duration: 3s;
+                animation-timing-function: linear;
+                animation-iteration-count: 1;
+                animation-direction: alternate;
+                animation-fill-mode: forwards;
+            }
+            
+        }
+        &__clean {
+            position: absolute;
+            left: 70%;
+            top: 50%;
+            transform: translate(0, -50%);
+            height: 40%;
+            width: 100%;
+            z-index: 1;
+            background: rgba($color: #fff, $alpha: 0.2);
+            pointer-events: none;
+            // border-top: 1px solid $darkgold;
+            // border-bottom: 1px solid $darkgold;
+            
+            .animate & {
+                animation-name: moveClean;
+                animation-duration: 3s;
+                animation-timing-function: linear;
+                animation-iteration-count: 1;
+                animation-direction: alternate;
+                animation-fill-mode: forwards;
+            }
+            
+    
+        }
+        &__title {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%) scale(0.5);
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+            opacity: 0;
+            left: 20%;
+            width: 80%;
+            text-transform: uppercase;
+            padding: 0 10px;
+            z-index: 1;
+            .animate & {
+                animation-name: showTitle;
+                animation-duration: 1s;
+                animation-delay: 2s;
+                animation-timing-function: linear;
+                animation-iteration-count: 1;
+                animation-direction: alternate;
+                animation-fill-mode: forwards;
+            }
+        }
+
+
+
+        &__bg {
+            width: 100%;
+            object-fit: cover;
+            height: 300px;
+        }
+    }
+
+
+    @media screen and (min-width: 480px) {
+        &__title {
+            font-size: 23px;
+        }
+    }
+    @media screen and (min-width: 640px) {
+        &__title {
+            font-size: 24px;
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        &__bg {
+            height: 100%;
+        }
+        &:after {
+            height: 100%;
+            width: 20%;
+            background: linear-gradient(to right, rgba($color: #fff, $alpha: 0) 0%, rgba($color: #fff, $alpha: 1));
+            right: 0;
+        }
+        &:before {
+            display: none;
+        }
+
+    }
+    @media screen and (min-width: 1024px) {
+        &__title {
+            font-size: 30px;
+        }
+    }
+    @media screen and (min-width: 1220px) {
+        &__title {
+            font-size: 35px;
+        }
+    }
+
+
+}
+
+@keyframes moveCleaner {
+    from {
+      right: 30%;
+    } 
+    to {
+        right: 80%;
+    }
+}
+
+@keyframes moveClean {
+    from {
+        left: 70%;
+    } 
+    to {
+        left: 20%;
+    }
+}
+
+@keyframes showTitle {
+    from {
+        transform: translateY(-50%) scale(0.5);
+        opacity: 0;
+    } 
+    to {
+        transform: translateY(-50%) scale(1);
+        opacity: 1;
+    }
+}
+
+.advantage {
+    // position: relative;
+    // padding-left: 60px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    &__icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: $primary;
+        border: 1px solid $darkgold;
+        color: $darkgold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-right: 1rem;
+
+    }
+    &__title {
+        font-weight: 700;
+    }
+    &__text {
+        display: none;
+        font-size: 0.8em;
+        margin-top: 0.5rem;
+    }
+
+    @media screen and (min-width: 1220px) {
+        position: relative;
+        padding-left: 60px;
+        display: block;
+        &__icon {
+        position: absolute;
+        left: 0;
+        top: 0;
+        }
+        &__text {
+            display: block;
+        }
+    }
+}

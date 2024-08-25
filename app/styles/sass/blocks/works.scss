@@ -1,0 +1,40 @@
+
+
+.works {
+    &-swiper {
+        padding-top: 1.5rem;
+    }
+    &__navigation {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 0 1rem;
+        padding-bottom: 1rem;
+        position: relative;
+    }
+    
+    // &__button {
+    //     top: auto;
+    //     height: 100%;
+    //     bottom: 0;
+    //     color: $darkgold;
+    //     transition: all 400ms;
+    //     &--next {
+    //         right: 0;
+    //         background: rgb(41,94,106);
+    //         background: linear-gradient(270deg, rgba($color: $primary, $alpha: 0.7) 50%, rgba($color: $primary, $alpha: 0) 100%);
+    //     }
+    //     &--prev {
+    //         left: 0;
+    //         background: rgb(41,94,106);
+    //         background: linear-gradient(90deg,  rgba($color: $primary, $alpha: 0.7) 50%,  rgba($color: $primary, $alpha: 0) 100%);
+    //     }
+    //     &:hover {
+    //         background: transparent;
+    //     }
+    // }
+}
+
+.work {
+
+}
+
