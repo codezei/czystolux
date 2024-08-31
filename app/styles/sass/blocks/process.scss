@@ -22,16 +22,22 @@
                 align-items: center;
                 justify-content: center;
                 margin-right: 15px;
-                background: $secondary;
-                border: 5px solid $third;
+                // background: $secondary;
+                // border: 5px solid $third;
+                background: $primary;
+                background: linear-gradient(to right, $fourth 0%, $secondary  100%);
+                box-shadow: 5px 5px 10px $primary;
+                color: $primary; 
+                border: 1px solid currentColor;
                 border-radius: 50%;
                 transition: all 400ms;
                 flex-shrink: 0;
-                color: #fff;
+                // color: #fff;
             }
             &:hover:before {
                 // background: $primary;
-                border: 5px solid $third;
+                // border: 2px solid currentColor;
+                background: linear-gradient(to bottom, $fourth 0%, $secondary  100%);
                 // color: #fff;
             }
     
@@ -57,13 +63,18 @@
                     align-items: center;
                     justify-content: center;
                     margin-right: 15px;
-                    background: $secondary;
-                    border: 5px solid $third;
+                    // background: $secondary;
+                    // border: 5px solid $third;
+                    background: $primary;
+                    background: linear-gradient(to right, $fourth 0%, $secondary  100%);
+                    box-shadow: 5px 5px 10px $primary;
+                    color: $primary; 
+                    border: 1px solid currentColor;
                     border-radius: 50%;
                     transition: all 400ms;
                     font-weight: 700;
                     font-size: 14px;
-                    color: #fff;
+                    // color: #fff;
                     
                 }
                 &:nth-child(1) {
@@ -100,8 +111,9 @@
                 &.active {
                     &:before {
                         // background: $primary;
-                        border: 5px solid $third;
+                        // border: 5px solid $fourth;
                         // color: #fff;
+                        background: linear-gradient(to bottom, $fourth 0%, $secondary  100%);
                     }
                     
                 }
