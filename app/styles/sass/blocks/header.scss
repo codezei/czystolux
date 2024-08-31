@@ -4,7 +4,7 @@
     text-align: center;
     // font-size: 1.5rem;
     img {
-        max-width: 70px;
+        max-width: 90px;
         border-radius: 0.5rem;
         display: block;
     }
@@ -19,8 +19,12 @@
         align-items: center;
         padding: 15px 0;
     }
-    &__menu {
+    &__menu .menu {
         display: none;
+    }
+    &__schedule {
+        font-weight: 700;
+        text-align: center;
     }
     &__contact {
         display: none;
@@ -42,6 +46,7 @@
         margin-left: 1rem;
 
     }
+
     &-mob {
         background: rgba($color: #000000, $alpha: 0.5);
         position: fixed;
@@ -84,8 +89,8 @@
         }
     }
     @media screen and (min-width: 1024px) {
-        &__menu {
-            display: block;
+        &__menu .menu {
+            display: flex;
         }
         &-mob {
             display: none !important;
