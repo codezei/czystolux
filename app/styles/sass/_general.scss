@@ -1,9 +1,9 @@
 // GENERAL PROJECT STYLES
 
-$primary:   #01352c;
-$secondary: #61b390;
-$third:  #bad8b6;
-$fourth: #e1eacd;
+$primary:   #033b3d;
+$secondary: #1cbfe4;
+$third:  #94ebff;
+$fourth: #93ddd0;
 $gold: #ffcc90;
 $darkgold: #dcad76;
 
@@ -14,7 +14,7 @@ $darkgold: #dcad76;
 }
 :root {
   scroll-behavior: unset;
-  --swiper-theme-color: #bad8b6;
+  --swiper-theme-color: #333;
 }
 
 body {
@@ -47,30 +47,45 @@ img {
   padding: 0;
 }
 .btn {
-    background: $primary;
-    background: linear-gradient(to right, $primary 0%, #000 51%, $primary  100%);
     padding: 15px;
     text-align: center;
     text-transform: uppercase;
     transition: all 0.5s;
-    background-size: 200% auto;
-    color: $darkgold;            
     border-radius: 10px;
     display: inline-block;
     vertical-align: middle;
     cursor: pointer;
     border: none;
-    box-shadow: 5px 5px 10px $primary;
     text-decoration: none;
+    background: $primary;
+    background: linear-gradient(to right, $fourth 0%, $secondary  100%);
+    box-shadow: 5px 5px 10px $primary;
+    color: $primary; 
     border: 1px solid currentColor;
+    position: relative;
+    overflow: hidden;
+    &:before {
+      content: "";
+      display: block;
+      height: 100%;
+      background-color: $fourth;
+      width: 0;
+      transition: all 400ms;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+    }
+    &:hover {
+      &:before {
+        width: 100%;
+      }
+    }
   }
   
-  .btn:hover {
-    background-position: right center; /* change the direction of the change here */
-    text-decoration: none;
-  }
+
   .title {
-    border-bottom: 4px solid $third;
+    border-bottom: 4px solid #333;
     text-transform: uppercase;
     &:not(:has( + .subtitle)) {
       margin-bottom: 1.5rem;
@@ -88,6 +103,10 @@ img {
       color: rgba($color: #fff, $alpha: 0.9);
     }
   }
+  .light-bg {
+    background: $primary;
+    background-image: radial-gradient(circle, #fff 0%, $fourth 100%);
+  }
 
 
 
@@ -99,7 +118,7 @@ img {
   .gradient-glow-title {
     font-size: 48px;
     font-weight: bold;
-    background: linear-gradient(to right, $secondary 0%, #000  100%);
+    background: linear-gradient(to right, $fourth 0%, $secondary  70%, $primary 100%);
     // -webkit-text-stroke: 1px $secondary;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -132,16 +151,36 @@ img {
   }
 
 .swiper-button-next, .swiper-button-prev {
-  position: static;
   transform: none;
   margin: 0;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: $secondary;
-  box-shadow: 1px 1px 5px $third;
+  background: $primary;
+  background: linear-gradient(to right, $fourth 0%, $secondary  100%);
+  box-shadow: 5px 5px 10px $primary;
+  color: $primary; 
+  border: 1px solid currentColor;
+  position: relative;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  &:before {
+    content: "";
+    display: block;
+    height: 100%;
+    background-color: $fourth;
+    width: 0;
+    transition: all 400ms;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
   &:hover {
-      background: darken($color: $secondary, $amount: 10%);
+    &:before {
+      width: 100%;
+    }
   }
   &:after {
       font-size: 1.25rem;

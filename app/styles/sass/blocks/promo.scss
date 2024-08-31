@@ -130,8 +130,8 @@
             z-index: 1;
             background: rgba($color: #fff, $alpha: 0.2);
             pointer-events: none;
-            // border-top: 1px solid $darkgold;
-            // border-bottom: 1px solid $darkgold;
+            // border-top: 1px solid $secondary;
+            // border-bottom: 1px solid $secondary;
             
             .animate & {
                 animation-name: moveClean;
@@ -259,8 +259,10 @@
         height: 50px;
         border-radius: 50%;
         background: $primary;
-        border: 1px solid $darkgold;
-        color: $darkgold;
+        background: linear-gradient(to right, $fourth 0%, $secondary  100%);
+        box-shadow: 5px 5px 10px $primary;
+        color: $primary; 
+        border: 1px solid currentColor;
         display: flex;
         align-items: center;
         justify-content: center;
